@@ -7,9 +7,8 @@ $db_user = 'root';
 $db_pass = '';
 
 try {
-    $pdo = new PDO("mysql:host=$db_host;dbname=$db_name;charsetutf8", $db_user, $db_pass, [
+    $pdo = new PDO("mysql:host=$db_host;dbname=$db_name;charset=utf8", $db_user, $db_pass, [
         PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
     ]);
 }   catch (Exception $e){
     die('Erreur de connexion : ' . htmlspecialchars($e->getMessage()));
